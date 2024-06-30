@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .logout-button {
+            margin-top: auto;
+            padding: 10px 0;
+            background-color: #444;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .logout-button:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Portal</h2>
+        <a href="{% url 'customer-list' %}">Customers</a>
+        <a href="{% url 'invoice-list' %}">Invoices</a>
+        <a href="{% url 'custom-logout' %}" class="logout-button">Logout</a>
+    </div>
+    <div class="content">
+        <h1>Welcome to the Admin Portal</h1>
+        <p>Select an option from the sidebar to get started.</p>
+    </div>
+</body>
+</html>

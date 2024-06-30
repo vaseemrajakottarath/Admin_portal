@@ -1,0 +1,27 @@
+<!-- customer_invoice_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer and Invoice List</title>
+</head>
+<body>
+    <h1>Customers</h1>
+    <ul>
+        {% for customer in customers %}
+            <li>{{ customer.name }} - {{ customer.email }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Invoices</h1>
+    <ul>
+        {% for invoice in invoices %}
+            <li>Invoice #{{ invoice.id }} - Customer: {{ invoice.customer.name }} - Amount: {{ invoice.amount }} - Status: {{ invoice.status }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'customer_create' %}">Create Customer</a>
+    <a href="">Create Invoice</a>
+</body>
+</html>
